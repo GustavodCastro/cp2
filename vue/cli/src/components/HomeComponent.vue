@@ -23,7 +23,7 @@
             }
         },
         components:{
-            CadastroComponent
+            CadastroComponent,
         }
     }
 

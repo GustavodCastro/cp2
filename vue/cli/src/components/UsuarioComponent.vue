@@ -2,14 +2,22 @@
     <div>
         <p>Nome: {{ nome }}</p>
         <p>E-mail: {{ email }}</p>
-    </div>    
+        <imagem-component/>
+        
+    </div>   
+    
+   
     </template>
 
 <script>
 
+import ImagemComponent from './ImagemComponent.vue'
 
 export default {
     name: "UsuarioComponent",
+    components:{
+        ImagemComponent
+    },
     data(){
         return {
             nome : "Gustavo",
