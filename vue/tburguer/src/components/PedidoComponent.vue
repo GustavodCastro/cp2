@@ -1,49 +1,53 @@
 <template>
 	<div> 
 		<form id="pedido-form">
-		<div id="foto-content">
-			<p id="nome-hamburguer-content">
-			Diretoria
-			</p>
-				<img id="foto-hamburguer" src="">
+			<div id="foto-content">
+				<p id="nome-hamburguer-content">
+				Diretoria
+				</p>
+					<img id="foto-hamburguer" src="">
 			</div>
-			<div class="inputs" id="form-pedido">
-				<label for="nome_cliente"> Nome</label>
-			</div>
-			<div class="input" type="text" >
-				id="nome-cliente"
-				name="nome-cliente"
-				placeholder="nome-cliente"/>
-			</div>
+				<div class="inputs" id="form-pedido">
+					<label for="nome_cliente"> Nome</label>
+				
+					<input type="text"
+						id="nome-cliente"
+						name="nome-cliente"
+						placeholder="nome-cliente"/>
+				</div>
 
-
-			<div class="inputs" id="form-pedido">
+			<div class="inputs">
 				<label for="ponto-carne">Ponto da Carne</label>
+				<select
+				 	id="ponto-carne"
+                 	name="ponto-carne"
+                 	v-model="pontoCarneSelecionado">
+                 <option value="" selected>Selecione o ponto</option>
+				<option v-for="pontoCarne" in "listaPontoCarne" 
+				:key="pontoCarne.id" 
+				:value="pontoCarne">{{pontoCarne.descricao}}</option>
+				</select>
 			</div>
-			<select id="nome-cliente" name="nome-cliente">
-			<option value="">Selecione o ponto</option>
-			<option v-for="pontoCarne" in "listaPontoCarne" :key="pontoCarne.id" :value="pontoCarne" >{{pontoCarne.descricao}}</option>
-			</select>
 
 			<div id="opcionais-titulo" class="inputs">
-			<label id="opcionais-titulo" for="Opcionais">Selecione os opcionais</label>
-			<label id="opcionais-titulo for"Complementos">Adicione um complemento </label>
-			<div class="checkbox-container">
-			 	<input type="checkbox" name="batata" value="Batata"/>
-			 	<span>Batata</span>
-			 	<input type="checkbox" name="refri" value="Refri"/>
-				<span>Refri</span>
+				<label id="opcionais-titulo" for="Opcionais">Selecione os opcionais</label>
+				<label id="opcionais-titulo for"Complementos">Adicione um complemento </label>
+				<div class="checkbox-container">
+			 			<input type="checkbox" name="batata" value="Batata"/>
+			 			<span>Batata</span>
+			 			<input type="checkbox" name="refri" value="Refri"/>
+						<span>Refri</span>
+				</div>
+				<label for="Complemento">Adicione um complemento</label>
+					<div class="checkbox-container">
+						<input type="checkbox" name="coca" value="Coca"/>
+			 			<span>Coca-Cola</span>
+			 			<input type="checkbox" name="fanta" value="Fanta"/>
+						<span>Fanta</span>
+					</div>
 			</div>
-
-			<label for="Complemento">Adicione um complemento</label>
-			<div class="checkbox-container">
-				<input type="checkbox" name="coca" value="Coca"/>
-			 	<span>Coca-Cola</span>
-			 	<input type="checkbox" name="fanta" value="Fanta"/>
-				<span>Fanta</span>
-			</div>
-			<div class="inputs">
-			<input type="submit" class="submit-btn" value="Confirmar Pedido"/>
+				<div class="inputs">
+				<input type="submit" class="submit-btn" value="Confirmar Pedido"/>
 			</div>
 		</form>
 	</div>
@@ -70,7 +74,7 @@
 		},
 		mouted(){
 			this.getTipoPontos();
-		},
+		}
 	}
 </script>
 
@@ -100,7 +104,7 @@
 }
 
 #pedido-form{
-	max-width: 600px;
+	max-width: 750px;
 	margin: 0 auto;
 
 }
@@ -130,6 +134,10 @@ input, select {
 	height: 20px;
 	font-size: 12px;
 
+}
+
+select {
+	heigth 50px;
 }
 
 #opcionais-titulo {

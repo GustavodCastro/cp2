@@ -9,8 +9,8 @@
 							<img src="burguer.foto" alt="burguer.nome"/>
 								<div class="card-coluna">
 									<p id="nome-content">{{burguer.nome}}</p>
-									<p id="preco-content">{{burguer.valor}},00</p>
-									<p id="descrica-content">{{burgue.descricao}}</p>
+									<p id="preco-content"> R$ {{burguer.valor}},00</p>
+									<p id="descricao-content">{{burgue.descricao}}</p>
 									<buttom>Selecionar</buttom>
 								</div>
 						</div>

@@ -7,6 +7,8 @@
 
 
 <script>
+	import PedidoComponent from '.../components/PedidoComponent.vue';
+	
 	export default{
 		name: "ConfiguracaoPedidoView",
 		data() {
