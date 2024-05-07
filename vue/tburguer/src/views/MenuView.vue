@@ -33,7 +33,7 @@
 		},
 		methods: {
 			async consultaMenu() {
-				const response = await fetch("http://localhost:3000/menu");
+				const response = await fetch("https://tburguer.wiremockapi.cloud/menu");
 				const dados = await response.json();
 				this.listaMenuHamburguer = dados.burgues;
 			}

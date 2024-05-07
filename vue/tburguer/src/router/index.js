@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import MenuView from '../views/MenuView.vue'
+import PedidoComponent from '../views/ConfiguracaoPedido.vue'
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: AboutView
     
+  }
+  {
+    path: '/config-pedido',
+    name: '/config-pedido',
+    component: PedidoComponent
   }
 ]
 
