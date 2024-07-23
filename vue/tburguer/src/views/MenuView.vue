@@ -2,44 +2,41 @@
 	<div>
 		<h1>Menu</h1>
 		<div id="scroll-horizontal">
-			<div id="card-content" v-for="burguer in listaMenuHamburguer" :key="burguer.id">
+			<div id="card-content" v-for="burguer in listaMenuHamburgues" :key="burguer.id">
 				<div id="card-linha">
-					</div>
-						<div id="foto-hamburguer">
-							<img src="burguer.foto" alt="burguer.nome"/>
+						<div class="foto-hamburguer">
+							<img :src="burguer.foto" alt="burguer.nome"/>
 								<div class="card-coluna">
 									<p id="nome-content">{{burguer.nome}}</p>
 									<p id="preco-content"> R$ {{burguer.valor}},00</p>
-									<p id="descricao-content">{{burgue.descricao}}</p>
+									<p id="descricao-content">{{burguer.descricao}}</p>
 									<buttom>Selecionar</buttom>
 								</div>
 						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </template>
 
 
 <script>
 	export default{
 		name : "MenuView",
-		data (){
+		data () {
 			return {
-				listaMenuHamburguer: []
+				listaMenuHamburgues: []
 			};
 		},
 		methods: {
-			async consultaMenu() {
+			async consultarMenu() {
 				const response = await fetch("https://tburguer.wiremockapi.cloud/menu");
 				const dados = await response.json();
-				this.listaMenuHamburguer = dados.burgues;
+				this.listaMenuHamburgues = dados.burgues;
 			}
 		},
 		mounted(){
-			this.consultaMenu()
+			this.consultarMenu()
 		}
 
 	}
@@ -82,14 +79,14 @@
 
 #nome-content{
 	font-size: 35px;
-	font-weigth: bold;
+	font-weight: bold;
 	text-align: center;
 	margin: 12px;
 }
 
 #preco-content{
 	font-size: 35px;
-	font-weigth bold;
+	font-weight:  bold;
 	text-align: center;
 	width: 100%;
 	color: green;

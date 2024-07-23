@@ -23,15 +23,16 @@
                  	name="ponto-carne"
                  	v-model="pontoCarneSelecionado">
                  <option value="" selected>Selecione o ponto</option>
-				<option v-for="pontoCarne" in "listaPontoCarne" 
+				<option 
+				v-for="pontoCarne in listaPontoCarne"> 
 				:key="pontoCarne.id" 
-				:value="pontoCarne">{{pontoCarne.descricao}}</option>
+				:value="pontoCarne">{{ pontoCarne.descricao }}</option>
 				</select>
 			</div>
 
 			<div id="opcionais-titulo" class="inputs">
 				<label id="opcionais-titulo" for="Opcionais">Selecione os opcionais</label>
-				<label id="opcionais-titulo for"Complementos">Adicione um complemento </label>
+				<label id="opcionais-titulo" for="Complementos">Adicione um complemento </label>
 				<div class="checkbox-container">
 			 			<input type="checkbox" name="batata" value="Batata"/>
 			 			<span>Batata</span>
@@ -59,17 +60,16 @@
 		name: "PedidoComponent",
 		data(){
 			return{
-				pontoCarneSelecionado:"";
+				pontoCarneSelecionado:"",
 				listaPontoCarne : []
 			}
 		},
 		methods: {
-			async : getTipoPontos(){
+			async : getTipoPontos() {
 				const responde = await fetch("https://tburguer.wiremockapi.cloud/tipos_pontos");
 				const data = await response.json();
 				this.listaPontoCarne = data;
 				console.log(this.listaPontoCarne);
-
 			}
 		},
 		mouted(){
@@ -77,12 +77,11 @@
 		}
 	}
 </script>
-
 <style scoped>
 
 
 #foto-content{
-	margin-botton: 16px;
+	margin-bottom: 16px;
 	border-radius: 16px;
 	position: relative;
 	z-index: -1;
@@ -95,11 +94,11 @@
 
 #nome-hamburguer-content{
 	font-size: 43px;
-	font-weigth: bold;
+	font-weight: bold;
 	text-align: start;
-	margin-botton: -90px;
+	margin-bottom: -90px;
 	margin-left: 40px
-	color: atiquewhite;
+	color: antiquewhite;
 	padding: 16px;
 }
 
@@ -118,8 +117,8 @@
 
 
 label{
-	font-weigth: bold;
-	margin-botton: 16px;
+	font-weight: bold;
+	margin-bottom: 16px;
 	color: #222;
 	padding: 5px 12px;
 	border-left: 4px solid darkgoldenrod;
@@ -137,7 +136,7 @@ input, select {
 }
 
 select {
-	heigth 50px;
+	height: 50px;
 }
 
 #opcionais-titulo {
@@ -145,7 +144,7 @@ select {
 }
 
 #opcionais-subtitulo {
-	font-weigth: bold;
+	font-weight: bold;
 	color: #222;
 	border-left: 4px solid darklategrey;
 }
@@ -155,18 +154,18 @@ select {
 	align-items: flex-start;
 	align-content: center;
 	width: 100%;
-	margin-botton: 16px;
+	margin-bottom: 16px;
 }
 
 .checkbox-container span, 
 .checkbox-container input {
 	width: auto;
-	height 20px;
+	height: 20px;
 }
 
 .checkbox-container span {
 	margin-left: 6px;
-	font-weigth: bold;
+	font-weight: bold;
 }
 
 .submit-btn {
@@ -179,7 +178,7 @@ select {
 	margin: 0 auto;
 	font-size: 16px;
 	width: 100%;
-	heigth: auto;
+	height: auto;
 	transition: 0.5s;
 }
 
