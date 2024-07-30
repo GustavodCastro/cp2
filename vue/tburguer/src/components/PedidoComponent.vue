@@ -5,7 +5,7 @@
 				<p id="nome-hamburguer-content">
 				Diretoria
 				</p>
-					<img id="foto-hamburguer" src="">
+					<img id="foto-hamburguer" src="https://www.estadao.com.br/resizer/v2/L3LYN5Y4MRG6BB47MNHEEXDRGA.jpeg?quality=80&auth=c4f56563b2c83e506971bce35dbc505a5ecdf7d89a70d2f2c5fbb8b0c7071e5f&width=720&height=503&smart=true">
 			</div>
 				<div class="inputs" id="form-pedido">
 					<label for="nome_cliente"> Nome</label>
@@ -58,21 +58,21 @@
 <script>
 	export default {
 		name: "PedidoComponent",
-		data(){
-			return{
-				pontoCarneSelecionado:"",
-				listaPontoCarne : []
+		data() {
+			return {
+				pontoCarneSelecionado: "",
+				listaPontoCarne : [],
 			}
 		},
 		methods: {
-			async : getTipoPontos() {
-				const responde = await fetch("https://tburguer.wiremockapi.cloud/tipos_pontos");
-				const data = await response.json();
-				this.listaPontoCarne = data;
-				console.log(this.listaPontoCarne);
+			async getTipoPontos() {
+                const response = await fetch("https://tburguer.wiremockapi.cloud/tipos_pontos");
+                const data = await response.json();
+                this.listaPontoCarne = data;
+                console.log(this.listaPontoCarne);
 			}
 		},
-		mouted(){
+		mouted() {
 			this.getTipoPontos();
 		}
 	}
@@ -97,7 +97,7 @@
 	font-weight: bold;
 	text-align: start;
 	margin-bottom: -90px;
-	margin-left: 40px
+	margin-left: 40px;
 	color: antiquewhite;
 	padding: 16px;
 }
@@ -187,9 +187,6 @@ select {
 	background-color: transparent;
 	color: #222;
 }
-
-
-
 
 
 
