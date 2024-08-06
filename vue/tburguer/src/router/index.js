@@ -3,7 +3,6 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import MenuView from '../views/MenuView.vue'
 import PedidoComponent from '../views/ConfiguracaoPedido.vue'
-import PedidosView from '../views/PedidosView.vue'
 
 const routes = [
   {
@@ -26,16 +25,10 @@ const routes = [
     
   },
   {
-    path: '/config-pedido',
-    name: '/config-pedido',
-    component: PedidoComponent
-  },
-  {
     path: '/pedidos',
     name: '/pedidos',
     component: PedidoComponent
-  },
-  
+  }
 ]
 
 const router = createRouter({
