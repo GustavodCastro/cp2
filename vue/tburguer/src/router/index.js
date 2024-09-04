@@ -28,7 +28,12 @@ const routes = [
     path: '/pedidos',
     name: '/pedidos',
     component: PedidoComponent
-  }
+  },
+  {
+    path: '/config-pedido',
+    name: 'config-pedido',
+    component: () => import('../views/ConfiguracaoPedidoView.vue')
+  },
 ]
 
 const router = createRouter({
