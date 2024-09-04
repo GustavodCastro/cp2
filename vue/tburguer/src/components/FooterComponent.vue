@@ -2,7 +2,7 @@
     <div>
         <footer id="footer">
             <p>
-            <a href="https://github.com/GustavodCastro" target="_blank">Construído por Gustavo de Castro &copy; 2024</a>
+            <a href="https://github.com/GustavodCastro" target="_blank">Desenvolvido por Gustavo de Castro &copy; 2024</a>
             </p>
         <a url=""></a>
         </footer>
